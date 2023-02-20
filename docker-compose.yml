@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  database_github:
+    image: postgres
+    container_name: database_ignite
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=github
+      - POSTGRES_PASSWORD=github123
+      - POSTGRES_DB=githubApi
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: githuApi
+    ports:
+      - "3333:3333"
+    volumes:
+      - .:/var/www/
+    links:
+      - database_github
+    depends_on:
+      - database_github  
+
+volumes:
+  pgdata:
+    driver: local
+
