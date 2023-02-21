@@ -4,5 +4,10 @@
     "host": "localhost",
     "username": "github",
     "password": "github123",
-    "database": "githubApi"
+    "database": "githubApi",
+    "entities": ["./src/modules/cars/entities/*.ts"],
+    "migrations": ["./src/database/migrations/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/database/migrations"
+    }
 }
