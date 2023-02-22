@@ -10,7 +10,7 @@ interface IRequest {
   language: string;
 }
 
-const URLs = ["https://api.github.com/repos/Torr7s/miami-client", "https://api.github.com/repos/ricardosilvareis/api-nestJs", "https://api.github.com/repos/ricardosilvareis/desafio01-ignite"]
+const URLs = ["https://api.github.com/repos/sudheerj/javascript-interview-questions", "https://api.github.com/repos/AtsushiSakai/PythonRobotics", "https://api.github.com/repos/socketio/socket.io", "https://api.github.com/repos/wix/react-native-navigation", "https://api.github.com/repos/animate-css/animate.css"]
 
 @injectable()
 class CreateRepositoryUseCase {
@@ -23,14 +23,13 @@ class CreateRepositoryUseCase {
     const repository = await axios
       .get(url)
       .then(({ data }) => {
-        console.log("LOGGUEEE", { data })
         return {
           name: data.name,
           description: data.description ?? 'Nenhuma descrição encontrada',
           url: data.html_url,
           stars: data.stargazers_count,
           language: data.language
-        }
+        } as IRequest
       });
 
     return repository;
