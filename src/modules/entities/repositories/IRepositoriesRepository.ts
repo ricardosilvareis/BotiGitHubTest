@@ -10,7 +10,8 @@ interface ICreateRepositoryDTO {
 }
 
 interface ICreateRepositoriesRepository {
-    findByName(id: string): Promise<RepositoryGitHub>
+    findByName(name: string): Promise<RepositoryGitHub>
+    findById(id: string): Promise<RepositoryGitHub>
     list(): Promise<RepositoryGitHub[]>
     create({ name, description, url, stars, language }: ICreateRepositoryDTO): Promise<void>
 }

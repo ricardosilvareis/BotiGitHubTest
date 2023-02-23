@@ -27,6 +27,12 @@ class RepositoriesRepository implements ICreateRepositoriesRepository {
     return repositoryGitHub;
   }
 
+  async findById(id: string): Promise<RepositoryGitHub> {
+    const repositoryGitHub = await this.repository.findOne({ id });
+
+    return repositoryGitHub;
+  }
+
 }
 
 export { RepositoriesRepository }
