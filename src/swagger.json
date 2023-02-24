@@ -1,0 +1,116 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "BotiGitHub API",
+        "description": "This is an API BotiGitHub",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/repositories": {
+            "post": {
+                "tags": [
+                    "Repositories"
+                ],
+                "summary": "Save a repositories",
+                "description": "Save a repositories",
+                "requestBody": {
+                    "content": {
+                        "applications/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "repos_urls": {
+                                        "type": "string"
+                                    }
+                                },
+                                "examples": {
+                                    "repos_urls": "['url', 'url']"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": "Save a new repository"
+                }
+            },
+            "get": {
+                "tags": [
+                    "Repositories"
+                ],
+                "summary": "List all repositories",
+                "description": "List all repositories",
+                "responses": {
+                    "200": {
+                        "description": "Sucess",
+                        "content": {
+                            "applications/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "stars": {
+                                                "type": "number"
+                                            },
+                                            "url": {
+                                                "type": "string"
+                                            },
+                                            "language": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/repositories/{id}": {
+            "get": {
+                "tags": [
+                    "Repositories"
+                ],
+                "summary": "List repositories by id",
+                "description": "List repositories by id",
+                "responses": {
+                    "200": {
+                        "description": "Sucess",
+                        "content": {
+                            "applications/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "stars": {
+                                            "type": "number"
+                                        },
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "language": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
