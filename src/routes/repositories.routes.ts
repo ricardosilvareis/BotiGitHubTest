@@ -6,14 +6,11 @@ import { ListRepositoryController } from "../modules/useCases/listRepository/Lis
 const repositoriesRoutes = Router();
 
 const createRepositoryController = new CreateRepositoryController();
-
 const listRepositoryController = new ListRepositoryController()
-
 const listRepositoryByIdController = new ListRepositoryByIdController()
 
 
 repositoriesRoutes.post("/", createRepositoryController.handle);
-
 repositoriesRoutes.get("/", listRepositoryController.handle);
 repositoriesRoutes.get("/:id", listRepositoryByIdController.handle);
 

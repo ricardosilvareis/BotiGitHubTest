@@ -9,7 +9,7 @@ class ListRepositoryController {
 
         const allRepositories = await listRepositoryUseCase.execute();
 
-        return response.status(200).json(allRepositories);
+        return response.status(200).send(allRepositories);
 
     }
 }
