@@ -10,10 +10,8 @@ Está uma aplicação que lista cinco repositórios destaque do GitHub.
 
 ## Documentação
 
-* A documentação desta aplicação consta-se no caminho: `link api-swagger`
-* O Back-End consta-se hospedado no seguinte endereço: `link endereço aplicação`
-* O Front-End consta-se hospedado no seguinte endereço: `https://botigithubtest.vercel.app/`
+* A documentação desta aplicação consta-se no caminho: `/api-docs`
 
 ## Repositórios
 
-* O Repositório do Front-End consta-se no seguinte link: `link repositorio front`
+* O Repositório do Front-End consta-se no seguinte link: `https://github.com/ricardosilvareis/botihubtest`
