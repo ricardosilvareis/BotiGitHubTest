@@ -10,7 +10,6 @@ class CreateRepositoryController {
 
         await createRepositoryUseCase.execute(urls);
 
-
         return response.status(201).send();
     }
 }

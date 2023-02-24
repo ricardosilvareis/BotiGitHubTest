@@ -1,7 +1,6 @@
 import { Response, Request } from "express";
 import { container } from "tsyringe";
 import { ListRepositoryByIdUseCase } from "./ListRepositoryByIdUseCase";
-import { ListRepositoryUseCase } from "./ListRepositoryUseCase";
 
 class ListRepositoryByIdController {
     async handle(request: Request, response: Response): Promise<Response> {
@@ -12,7 +11,7 @@ class ListRepositoryByIdController {
 
         const allRepositories = await listRepositoryByIdUseCase.execute(id);
 
-        return response.status(200).json(allRepositories);
+        return response.status(200).send(allRepositories);
 
     }
 
